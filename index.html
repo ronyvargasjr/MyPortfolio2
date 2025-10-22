@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rony Vargas — Portfolio | Web Developer</title>
+  <meta name="description" content="Portfolio of Ron Y., a web developer specializing in responsive websites, front-end development, and web accessibility. View projects, skills, and contact information.">
+  <meta name="author" content="Rony Vargas">
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rony Vargas — Portfolio | Web Developer">
+  <meta property="og:description" content="Portfolio of Ron Y., a web developer specializing in responsive websites, front-end development, and web accessibility.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/images/portfolio-og.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rony Vargas — Portfolio | Web Developer">
+  <meta name="twitter:description" content="Portfolio of Ron Y., a web developer specializing in responsive websites, front-end development, and web accessibility.">
+  <meta name="twitter:image" content="https://example.com/images/portfolio-og.jpg">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+  "name": "Rony Vargas",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://github.com/yourusername",
+      "https://linkedin.com/in/yourusername"
+    ],
+    "jobTitle": "Web Developer",
+    "description": "Web developer specializing in responsive websites, front-end development, and accessibility."
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
+  <header class="container" role="banner">
+    <div>
+  <h1>Rony Vargas</h1>
+      <p>Web Developer</p>
+    </div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle">
+      <!-- Accessible hamburger icon (decorative SVG) -->
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect y="4" width="24" height="2" rx="1" fill="currentColor" />
+        <rect y="11" width="24" height="2" rx="1" fill="currentColor" />
+        <rect y="18" width="24" height="2" rx="1" fill="currentColor" />
+      </svg>
+    </button>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Hi, I'm Rony — I build accessible, responsive websites.</h2>
+      <p>I design and develop web applications with a focus on performance, accessibility and clean code.</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="about-me">
+          <h3 id="about-me">Background</h3>
+          <p>I have X years of experience building websites and applications using HTML, CSS, and JavaScript. I enjoy solving UI problems and improving accessibility.</p>
+          <p>Based in City, Country — available for remote or onsite work.</p>
+        </article>
+        <aside class="card" aria-labelledby="photo-caption">
+          <figure>
+            <img src="images/profile.svg" alt="Profile placeholder: initials R V for Rony Vargas">
+            <figcaption id="photo-caption">Rony Vargas — web developer</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="proj1">
+          <h3 id="proj1">Project One</h3>
+          <img src="images/project1.svg" alt="Project One thumbnail" class="project-thumb">
+          <p>Short description of the project, the problem solved, and the tech used.</p>
+          <p><strong>Built with:</strong> HTML, CSS, JavaScript</p>
+          <p><a class="btn" href="#" aria-label="View Project One">View project</a></p>
+        </article>
+        <article class="card" aria-labelledby="proj2">
+          <h3 id="proj2">Project Two</h3>
+          <img src="images/project2.svg" alt="Project Two thumbnail" class="project-thumb">
+          <p>Short description of the project, the problem solved, and the tech used.</p>
+          <p><strong>Built with:</strong> React, Node.js</p>
+          <p><a class="btn" href="#" aria-label="View Project Two">View project</a></p>
+        </article>
+        <article class="card" aria-labelledby="proj3">
+          <h3 id="proj3">Project Three</h3>
+          <img src="images/project3.svg" alt="Project Three thumbnail" class="project-thumb">
+          <p>Short description of the project, the problem solved, and the tech used.</p>
+          <p><strong>Built with:</strong> Python, Flask</p>
+          <p><a class="btn" href="#" aria-label="View Project Three">View project</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>HTML5 & semantic markup</li>
+        <li>CSS3, Flexbox, Grid, Responsive Design</li>
+        <li>JavaScript (ES6+), React</li>
+        <li>Accessibility (WCAG), performance optimization</li>
+        <li>Node.js, REST APIs, Git</li>
+      </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>If you'd like to work together or ask a question, send a message below or reach out via <a href="mailto:you@example.com">email</a>.</p>
+      <form class="card" action="/send-message" method="post" aria-labelledby="contact-heading">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Write your message here"></textarea>
+        </div>
+        <div>
+          <label for="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            I consent to having this website store my submitted information so they can respond to my inquiry.
+          </label>
+        </div>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+  <p>&copy; 2025 Rony Vargas — <a href="https://github.com/yourusername">GitHub</a> · <a href="https://linkedin.com/in/yourusername">LinkedIn</a></p>
+      <p>Built with semantic HTML & accessibility in mind.</p>
+    </div>
+  </footer>
+</body>
+<script src="scripts.js" defer></script>
+</html>

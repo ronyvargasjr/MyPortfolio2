@@ -1,0 +1,127 @@
+/* Minimal, interview-friendly styling: clean, calm, high-contrast for readability */
+:root{
+  /* Slightly dark, eye-friendly palette */
+  --bg:#0f1724; /* deep navy-gray background */
+  --card:#0b1220; /* slightly lighter card background */
+  --muted:#94a3b8; /* soft muted text */
+  --text:#e6eef8; /* primary text */
+  --accent:#4da3ff; /* soft blue accent */
+  --accent-2:#6fb0ff;
+  --glass:rgba(77,163,255,0.06);
+  --radius:10px;
+  --max-width:1000px;
+  --ff:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* Header & Nav */
+header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;position:relative}
+header h1{margin:0;font-size:1.2rem;letter-spacing:0.2px}
+header p{margin:0;color:var(--muted);font-size:.9rem}
+nav a{margin-left:1rem;color:var(--text);text-decoration:none;padding:.5rem .6rem;border-radius:6px;transition:all .18s ease}
+/* prominent nav on larger screens */
+@media(min-width:640px){nav a{margin-left:1rem}}
+nav a:hover,nav a:focus{background:var(--glass);transform:translateY(-2px);box-shadow:0 8px 20px rgba(77,163,255,0.08)}
+nav a:active{transform:translateY(0)}
+
+/* Hero */
+.hero{padding:2rem 0}
+.hero h2{margin:.25rem 0 0;font-size:1.6rem}
+.hero p{color:var(--muted)}
+
+/* Grid & cards */
+.grid{display:grid;gap:1rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:color-mix(in srgb, var(--card) 82%, transparent 18%);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius);padding:1rem;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,6,23,0.65)}
+.card h3{margin-top:0}
+
+/* Figure image */
+figure img{width:100%;height:auto;border-radius:6px;display:block}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+
+/* Skills */
+#skills ul{padding-left:1.25rem}
+
+/* Contact form */
+form.card{max-width:680px}
+label{display:block;margin-bottom:.25rem;font-weight:600}
+input,textarea,button{width:100%;padding:.6rem;margin-bottom:.5rem;border:1px solid rgba(255,255,255,0.06);border-radius:6px;background:transparent;color:var(--text);font-family:var(--ff)}
+input::placeholder,textarea::placeholder{color:rgba(230,238,248,0.45)}
+input:focus,textarea:focus{outline:3px solid rgba(77,163,255,0.12);border-color:var(--accent-2)}
+button{background:var(--accent);color:#062033;border:none;padding:.75rem;border-radius:6px;cursor:pointer}
+button:hover{background:var(--accent-2);transform:translateY(-2px)}
+
+/* Button utility for actions */
+.btn{display:inline-block;padding:.5rem .85rem;border-radius:8px;background:var(--accent);color:#062033;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover{background:var(--accent-2);transform:translateY(-3px);box-shadow:0 8px 20px rgba(77,163,255,0.12)}
+.btn:focus{outline:3px solid rgba(77,163,255,0.12)}
+
+/* Project thumbnail */
+.project-thumb{width:100%;height:140px;object-fit:cover;border-radius:6px;margin-bottom:.6rem;background:linear-gradient(135deg,rgba(77,163,255,0.06),rgba(11,18,34,0.06));display:block}
+
+/* Footer */
+footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.95rem}
+
+/* Nav behavior: hidden by default, shown only when toggled open */
+/* Make the hamburger button a consistent square touch target and center the icon */
+#nav-toggle{
+  display:block;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  right:1rem;
+  top:50%;
+  transform:translateY(-50%);
+  border:0;
+  padding:0.25rem;
+  border-radius:8px;
+  cursor:pointer;
+  transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  color:#062033;
+  background:var(--accent-2);
+  z-index:1001;
+}
+.nav-toggle svg{width:20px;height:20px;display:block;fill:currentColor}
+.nav-toggle:hover{background:var(--accent-2);color:#062033;transform:translateY(-3px);box-shadow:0 8px 20px rgba(77,163,255,0.12)}
+.nav-toggle:focus{outline:3px solid rgba(77,163,255,0.12);outline-offset:2px}
+
+/* Primary nav hidden by default */
+#primary-nav{display:none; margin-right: 100px; opacity:0;transform:translateX(12px);transition:transform .28s cubic-bezier(.2,.9,.2,1),opacity .18s ease}
+
+/* PANEL: on small screens the nav is a right-aligned panel that slides slightly from the hamburger */
+@media(max-width:640px){
+  #primary-nav.open{display:block;opacity:1;transform:translateX(0);position:absolute;top:calc(100% + 8px);right:1rem;width:220px;  background:var(--card);border-radius:8px;padding:.5rem;box-shadow:0 12px 30px rgba(2,6,23,0.6);z-index:1000}
+  #primary-nav a{display:block;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--text);opacity:0;transform:translateX(28px);transition:transform .32s cubic-bezier(.2,.9,.2,1),opacity .18s ease}
+  #primary-nav.open a{opacity:1;transform:translateX(0)}
+  /* stagger right-to-left */
+  #primary-nav.open a:nth-last-child(1){transition-delay:0s}
+  #primary-nav.open a:nth-last-child(2){transition-delay:.05s}
+  #primary-nav.open a:nth-last-child(3){transition-delay:.1s}
+  #primary-nav.open a:nth-last-child(4){transition-delay:.15s}
+}
+
+/* Larger screens: when opened, show horizontally but still animate items */
+@media(min-width:640px){
+  #primary-nav.open{display:flex;align-items:center;opacity:1;transform:none}
+  #primary-nav a{display:inline-block;margin-left:1rem;padding:.5rem .6rem;border-bottom:0;opacity:0;transform:translateX(12px);transition:transform .28s cubic-bezier(.2,.9,.2,1),opacity .18s ease}
+  #primary-nav.open a{opacity:1;transform:translateX(0)}
+  /* stagger for desktop as well */
+  #primary-nav.open a:nth-last-child(1){transition-delay:0s}
+  #primary-nav.open a:nth-last-child(2){transition-delay:.04s}
+  #primary-nav.open a:nth-last-child(3){transition-delay:.08s}
+  #primary-nav.open a:nth-last-child(4){transition-delay:.12s}
+}
+
+/* Responsive tweaks */
+@media(max-width:520px){header{flex-direction:column;align-items:flex-start}nav{margin-top:.5rem} .hero h2{font-size:1.25rem}}
+
+/* small interaction flourish */
+a[aria-label]{border-bottom:1px dashed rgba(11,95,255,0.06)}
+a[aria-label]:hover{border-bottom-style:solid}

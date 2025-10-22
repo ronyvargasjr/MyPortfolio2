@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="p1Title p1Desc">
+  <title id="p1Title">Project One thumbnail</title>
+  <desc id="p1Desc">Abstract blue gradient thumbnail with geometric shapes for Project One.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#153a5b" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g1)" rx="12"/>
+  <circle cx="120" cy="90" r="48" fill="rgba(255,255,255,0.06)" />
+  <rect x="220" y="60" width="380" height="260" rx="10" fill="rgba(255,255,255,0.04)" />
+</svg>
